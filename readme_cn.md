@@ -620,3 +620,5 @@ UI 中预设支持的类别包括：
 - TurtleBot3 / Spark 机器人相关开源资源
 
 ---
+
+https://github.com/user-attachments/assets/3814a260-a9da-4e35-8c45-480f7bd3a10d
