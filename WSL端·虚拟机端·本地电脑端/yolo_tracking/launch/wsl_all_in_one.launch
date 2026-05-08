@@ -1,0 +1,31 @@
+<launch>
+    <node pkg="yolo_tracking"
+          type="yolo_detector_sender_ui_node.py"
+          name="yolo_detector_sender_ui_node"
+          output="screen">
+
+        <!-- 订阅机器人图像 -->
+        <param name="rgb_topic" value="/camera/rgb/image_raw" />
+
+        <!-- YOLO 模型 -->
+        <param name="model_path" value="/home/fish/catkin_ws/src/yolo_tracking/models/yolo26s.pt" />
+        <param name="target_class" value="person" />
+        <param name="device" value="0" />
+        <param name="conf_thres" value="0.45" />
+        <param name="imgsz" value="640" />
+        <param name="show_window" value="true" />
+        <param name="max_jump_dist" value="120.0" />
+        <param name="send_no_detection" value="true" />
+
+        <!-- TCP 发给机器人 -->
+        <param name="server_ip" value="10.31.108.35" />
+        <param name="server_port" value="5005" />
+        <param name="reconnect_interval" value="2.0" />
+
+        <!-- UI 支持的类别 -->
+        <rosparam param="supported_classes">
+            [person, chair, bottle, backpack, cup, laptop, book, "cell phone"]
+        </rosparam>
+
+    </node>
+</launch>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>yolo_tracking</name>
+  <version>0.0.1</version>
+  <description>
+    YOLO-based dynamic object detection and tracking package for TurtleBot3 RGB-D following.
+  </description>
+
+  <maintainer email="fish@example.com">fish</maintainer>
+  <license>MIT</license>
+
+  <!-- Build tool -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Build dependencies -->
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+
+  <!-- Build export dependencies -->
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+
+  <!-- Execution dependencies -->
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+</package>

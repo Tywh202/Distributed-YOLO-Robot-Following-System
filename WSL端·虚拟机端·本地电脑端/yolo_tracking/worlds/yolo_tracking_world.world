@@ -1,0 +1,188 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="yolo_tracking_world">
+
+    <!-- 基础环境 -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- GUI 视角 -->
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>-6 -5 4 0 0.45 0.75</pose>
+      </camera>
+    </gui>
+
+    <!-- ========================= -->
+    <!-- 已确认可用的 person 模型 -->
+    <!-- ========================= -->
+
+    <include>
+      <uri>model://standing_person</uri>
+      <name>standing_person_1</name>
+      <pose>2.0 0.0 0 0 0 3.14159</pose>
+    </include>
+
+    <include>
+      <uri>model://walking_person</uri>
+      <name>walking_person_1</name>
+      <pose>3.2 1.2 0 0 0 -2.6</pose>
+    </include>
+
+    <!-- ========================= -->
+    <!-- 其他预设目标（示例布局） -->
+    <!-- 这些模型名需要和你本地 gazebo 模型库一致 -->
+    <!-- 如果暂时没有对应模型，可先注释掉 -->
+    <!-- ========================= -->
+
+    <!-- chair -->
+    <!--
+    <include>
+      <uri>model://office_chair</uri>
+      <name>chair_target_1</name>
+      <pose>1.5 -1.6 0 0 0 1.57</pose>
+    </include>
+    -->
+
+    <!-- bottle -->
+    <!--
+    <include>
+      <uri>model://bottle</uri>
+      <name>bottle_target_1</name>
+      <pose>0.8 1.8 0 0 0 0</pose>
+    </include>
+    -->
+
+    <!-- backpack -->
+    <!--
+    <include>
+      <uri>model://backpack</uri>
+      <name>backpack_target_1</name>
+      <pose>2.8 -1.0 0 0 0 0.5</pose>
+    </include>
+    -->
+
+    <!-- cup -->
+    <!--
+    <include>
+      <uri>model://cup</uri>
+      <name>cup_target_1</name>
+      <pose>0.3 -2.0 0 0 0 0</pose>
+    </include>
+    -->
+
+    <!-- laptop -->
+    <!--
+    <include>
+      <uri>model://laptop</uri>
+      <name>laptop_target_1</name>
+      <pose>3.5 -0.2 0 0 0 1.2</pose>
+    </include>
+    -->
+
+    <!-- book -->
+    <!--
+    <include>
+      <uri>model://book</uri>
+      <name>book_target_1</name>
+      <pose>1.0 2.3 0 0 0 0</pose>
+    </include>
+    -->
+
+    <!-- cell phone -->
+    <!--
+    <include>
+      <uri>model://cell_phone</uri>
+      <name>cellphone_target_1</name>
+      <pose>2.2 2.0 0 0 0 0</pose>
+    </include>
+    -->
+
+    <!-- ========================= -->
+    <!-- 可选：几个小平台，方便放小物体 -->
+    <!-- 如果你后面要放 bottle / cup / laptop 等，
+         建议用平台抬高，否则小物体可能贴地太难检测 -->
+    <!-- ========================= -->
+
+    <model name="platform_1">
+      <static>true</static>
+      <pose>0.8 1.8 0.15 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+            <diffuse>0.75 0.75 0.75 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="platform_2">
+      <static>true</static>
+      <pose>1.5 -1.6 0.15 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+            <diffuse>0.75 0.75 0.75 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="platform_3">
+      <static>true</static>
+      <pose>3.5 -0.2 0.15 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+            <diffuse>0.75 0.75 0.75 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>
